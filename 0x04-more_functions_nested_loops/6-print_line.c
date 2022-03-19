@@ -1,26 +1,20 @@
 #include "main.h"
 
 /**
- * print_line - checks for a digit (0 through 9).
- * @n: n - Variable
- * Return: Always 0.
- * /
- 
+* print_line - prints a line of _ n long
+* @n: length of line
+*
+* Return: void
+*/
+
 void print_line(int n)
 {
-     
-        int x;
+	int line = 0;
 
-
-
-	if (n > 0)
+	while (line < n)
 	{
-	   
-	    for (x = 1; x <= n; x++)
-	            _putchar(95);
-		    }
-		         }
-		    _putchar('\n');
-		 
-		    }
-
+		_putchar('_');
+		line++;
+	}
+	_putchar('\n');
+}
