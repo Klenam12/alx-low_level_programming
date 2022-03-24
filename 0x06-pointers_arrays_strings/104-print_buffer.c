@@ -1,25 +1,44 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * print_buffer - prints a buffer
- * @b: string
+ * @b: buffer
  * @size: size of buffer
  */
+
 void print_buffer(char *b, int size)
 {
-	int start, end;
+	int j, k, l;
 
-	if (size > 0)
+	if (size <= 0)
+		printf("\n");
+	else
 	{
-		for (start = 0; start < size; start += 10)
+		for (j = 0; j < size; j += 10)
 		{
-			end = (size - start < 10) ? size - start : 10;
-			printf("%08x: ", start);
-			printHexes(b, start, end);
-			printASCII(b, start, end);
+			printf("%.8x:", j);
+			for (k = j; k < j + 10; k++)
+			{
+				if (k % 2 == 0)
+					printf(" ");
+				if (k < size)
+					printf("%.2x", *(b + k));
+				else
+					printf("  ");
+			}
+			printf(" ");
+			for (l = j; l < j + 10; l++)
+			{
+				if (l >= size)
+					break;
+				if (*(b + l) < 32 || *(b + l) > 126)
+					printf("%c", '.');
+				else
+					printf("%c", *(b + l));
+			}
 			printf("\n");
 		}
-	} else
-		printf("\n");
+	}
 }
 
