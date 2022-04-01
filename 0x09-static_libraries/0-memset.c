@@ -1,21 +1,3 @@
-!<arch>
-0-isupper.c/    0           0     0     644     219       `
-#include "main.h"
-
-/**
- * _isupper - function that checks for uppercase characters
- * @c: int type number
- * Return: 1 if uppercase, else 0
- */
-int _isupper(int c)
-{
-	if (c > 64 && c < 91)
-		return (1);
-
-	return (0);
-}
-
-0-memset.c/     0           0     0     644     438       `
 #include "main.h"
 
 /**
