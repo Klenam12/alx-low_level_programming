@@ -40,4 +40,4 @@ int main(int argc, char *argv[])
 	ans[5] = pass[(sum ^ 0xe5) & 0x3f];
 	printf("%s", ans);
 	return (0);
-
+}
